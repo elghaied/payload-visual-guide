@@ -1,22 +1,20 @@
 import process from 'node:process';
-import type { NextConfig } from 'next';
+Object.assign(process.env, { NEXT_TELEMETRY_DISABLED: '1' });
+
+/**
+ * @typedef {import('next').NextConfig} NextConfig
+ * @typedef {Array<((config: NextConfig) => NextConfig)>} NextConfigPlugins
+ */
 import nextMDX from '@next/mdx';
 import rehypeSlug from 'rehype-slug';
 import rehypePrettyCode from 'rehype-pretty-code';
-import type { Options as PrettyCodeOptions } from 'rehype-pretty-code';
 import moonlightTheme from './assets/moonlight-ii.json' with { type: 'json' };
 
-// Set telemetry env var
-Object.assign(process.env, { NEXT_TELEMETRY_DISABLED: '1' });
+/** @type {NextConfigPlugins} */
+const plugins = [];
 
-// Define plugin type
-type Plugin = (config: NextConfig) => NextConfig;
-
-// Initialize plugins array
-const plugins: Plugin[] = [];
-
-// Base Next.js configuration
-const nextConfig: NextConfig = {
+/** @type {NextConfig} */
+const nextConfig = {
   output: 'export',
   cleanDistDir: true,
   reactStrictMode: true,
@@ -27,22 +25,20 @@ const nextConfig: NextConfig = {
   },
 };
 
-// Rehype Pretty Code options
-const prettyCodeOptions: PrettyCodeOptions = {
+/** @type {import('rehype-pretty-code').Options} */
+const options = {
   keepBackground: false,
   theme: moonlightTheme,
 };
 
-// Add MDX plugin
 plugins.push(
   nextMDX({
     extension: /\.(md|mdx)$/,
     options: {
       remarkPlugins: [],
-      rehypePlugins: [[rehypePrettyCode, prettyCodeOptions], rehypeSlug],
+      rehypePlugins: [[rehypePrettyCode, options], rehypeSlug],
     },
-  }) as Plugin // Type assertion needed because nextMDX types are not perfectly aligned
+  }),
 );
 
-// Export the config with all plugins applied
-export default () => plugins.reduce((config, plugin) => plugin(config), nextConfig);
+export default () => plugins.reduce((_, plugin) => plugin(_), nextConfig);

@@ -61,10 +61,12 @@ const RootView: FC<RootViewProps> = ({ onZoneClick }) => {
           </h1>
 
           <Button
-            variant="outline"
+            variant="destructive"
             className="w-full h-16"
             onClick={() => onZoneClick("before-dashboard")}
-          />
+          >
+            Before Dashboard Zone
+          </Button>
         </div>
 
         <div className="mb-8">

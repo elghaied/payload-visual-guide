@@ -5,7 +5,7 @@ interface CollectionViewProps {
   onZoneClick: (zone: string) => void
 }
 
-const CollectionView: FC<CollectionViewProps> = ({ onZoneClick }) => {
+const CollectionListView: FC<CollectionViewProps> = ({ onZoneClick }) => {
   return (
     <div className="border-2 border-dashed border-gray-300 p-4 h-full">
       <h2 className="text-2xl font-bold mb-4">Collection View</h2>
@@ -36,5 +36,5 @@ const CollectionView: FC<CollectionViewProps> = ({ onZoneClick }) => {
   )
 }
 
-export default CollectionView
+export default CollectionListView
 
