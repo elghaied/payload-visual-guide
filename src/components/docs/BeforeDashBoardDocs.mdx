@@ -1,3 +1,5 @@
+import {Code } from '../Code'
+
 # Before Dashboard on the root view
 
 The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
@@ -5,8 +7,8 @@ The `BeforeDashboard` component renders the 'welcome' block that you see after l
 - two 
 - three
 
-```typescript
-export default buildConfig({
+
+<Code code="export default buildConfig({
   admin: {
     components: {
       beforeDashboard: ['@/components/BeforeDashboard'],
@@ -15,5 +17,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   // ... rest of your config
-});
+});"/>
+ 
+
 

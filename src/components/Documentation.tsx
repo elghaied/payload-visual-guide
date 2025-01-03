@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import RootHeaderDocs from '@/components/docs/RootHeaderDocs.mdx'
 import BeforeDashBoardDocs from '@/components/docs/BeforeDashBoardDocs.mdx'
+
 // import RootDashboardDocs from './docs/RootDashboardDocs.mdx'
 // import RootNavDocs from './docs/RootNavDocs.mdx'
 // import CollectionListColumnsDocs from './docs/CollectionListColumnsDocs.mdx'
@@ -55,6 +56,7 @@ const Documentation: FC<DocumentationProps> = ({ selectedZone }) => {
     <div className="w-1/2 p-4 bg-gray-100 overflow-y-auto">
       <h2 className="text-2xl font-bold mb-4">Documentation</h2>
       {renderDocs()}
+     
     </div>
   )
 }
