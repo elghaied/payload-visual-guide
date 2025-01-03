@@ -1,0 +1,19 @@
+# Customizing the Root Header
+
+To customize the header in Payload CMS Root View, you can use the `admin.components.views.Dashboard` field in your configuration:
+
+```javascript
+import { buildConfig } from 'payload/config';
+import CustomHeader from './components/CustomHeader';
+
+export default buildConfig({
+  admin: {
+    components: {
+      views: {
+        Dashboard: CustomHeader,
+      },
+    },
+  },
+  // ... rest of your config
+});
+
