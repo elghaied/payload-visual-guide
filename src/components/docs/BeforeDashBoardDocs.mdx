@@ -1,0 +1,19 @@
+# Before Dashboard on the root view
+
+The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
+- one
+- two 
+- three
+
+```typescript
+export default buildConfig({
+  admin: {
+    components: {
+      beforeDashboard: ['@/components/BeforeDashboard'],
+    },
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
+  // ... rest of your config
+});
+

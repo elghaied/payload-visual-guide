@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import RootHeaderDocs from '@/components/docs/RootHeaderDocs.mdx'
+import BeforeDashBoardDocs from '@/components/docs/BeforeDashBoardDocs.mdx'
 // import RootDashboardDocs from './docs/RootDashboardDocs.mdx'
 // import RootNavDocs from './docs/RootNavDocs.mdx'
 // import CollectionListColumnsDocs from './docs/CollectionListColumnsDocs.mdx'
@@ -21,6 +22,8 @@ const Documentation: FC<DocumentationProps> = ({ selectedZone }) => {
     switch (selectedZone) {
       case 'root-header':
         return <RootHeaderDocs />
+      case 'before-dashboard':
+        return <BeforeDashBoardDocs />
       // case 'root-dashboard':
       //   return <RootDashboardDocs />
       // case 'root-nav':
