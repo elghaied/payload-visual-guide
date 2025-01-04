@@ -1,15 +1,14 @@
-import { FC } from "react";
+ 
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import ZoneButton from "../ZoneButton";
 
-interface RootViewProps {
-  onZoneClick: (zone: string) => void;
-}
+ 
 
-const RootView: FC<RootViewProps> = ({ onZoneClick }) => {
+const RootView = ( ) => {
   const collections = [
     { title: "Pages", href: "/pages" },
     { title: "Posts", href: "/posts" },
@@ -60,13 +59,10 @@ const RootView: FC<RootViewProps> = ({ onZoneClick }) => {
             Welcome to your dashboard!
           </h1>
 
-          <Button
-            variant="destructive"
-            className="w-full h-16"
-            onClick={() => onZoneClick("before-dashboard")}
-          >
-            Before Dashboard Zone
-          </Button>
+          <ZoneButton
+             zone="before-dashboard"
+          />
+          
         </div>
 
         <div className="mb-8">

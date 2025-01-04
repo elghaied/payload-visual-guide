@@ -1,6 +1,6 @@
-"use client";
 
-import { useState } from "react";
+
+ 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import RootView from "@/components/views/RootView";
 import GlobalView from "@/components/views/GlobalView";
@@ -14,12 +14,9 @@ import {
 import CollectionListView from "@/components/views/CollectionListView";
 
 export default function Home() {
-  const [selectedZone, setSelectedZone] = useState<string | null>(null);
+ 
 
-  const handleZoneClick = (zone: string) => {
-    setSelectedZone(zone);
-  };
-
+ 
   return (
     <main className="flex min-h-screen flex-col">
       <h1 className="text-3xl font-bold text-center py-4">
@@ -35,7 +32,7 @@ export default function Home() {
         <ResizablePanelGroup direction="horizontal" >
           <ResizablePanel className="w-1/2 p-4">
             <TabsContent value="root">
-              <RootView onZoneClick={handleZoneClick} />
+              <RootView   />
             </TabsContent>
             <TabsContent value="collection">
             <Tabs defaultValue="list" className="w-full">
@@ -45,22 +42,22 @@ export default function Home() {
               </TabsList>
               
               <TabsContent value="list">
-                <CollectionListView onZoneClick={handleZoneClick} />
+                <CollectionListView  />
               </TabsContent>
               <TabsContent value="edit">
-              <DocumentView onZoneClick={handleZoneClick} />
+              <DocumentView   />
               </TabsContent>
             </Tabs>
           </TabsContent>
             <TabsContent value="global">
-              <GlobalView onZoneClick={handleZoneClick} />
+              <GlobalView   />
             </TabsContent>
             
           </ResizablePanel>
           <ResizableHandle withHandle  />
           <ResizablePanel>
           
-            <Documentation selectedZone={selectedZone} />
+            <Documentation  />
           </ResizablePanel>
         </ResizablePanelGroup>
       </Tabs>

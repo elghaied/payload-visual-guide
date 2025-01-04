@@ -1,14 +1,15 @@
-import { FC } from 'react'
+
+"use client";
 import RootHeaderDocs from '@/components/docs/RootHeaderDocs.mdx'
 import BeforeDashBoardDocs from '@/components/docs/BeforeDashBoardDocs.mdx'
+import { useZone } from '@/context/ZoneContext';
+ 
 
 
 
-interface DocumentationProps {
-  selectedZone: string | null
-}
 
-const Documentation: FC<DocumentationProps> = ({ selectedZone }) => {
+const Documentation = () => {
+  const { selectedZone } = useZone()
   const renderDocs = () => {
     switch (selectedZone) {
       case 'root-header':
