@@ -27,4 +27,3 @@ We welcome contributions to the Payload CMS Customization Guide! Here's how you 
 5. Submit a pull request with a clear description of your changes.
 
 Thank you for contributing to the Payload CMS Customization Guide!
-

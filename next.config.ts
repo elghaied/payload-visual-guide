@@ -1,4 +1,5 @@
 import process from 'node:process';
+import type { NextConfig } from 'next';
 Object.assign(process.env, { NEXT_TELEMETRY_DISABLED: '1' });
 
 /**
@@ -10,11 +11,11 @@ import rehypeSlug from 'rehype-slug';
 import rehypePrettyCode from 'rehype-pretty-code';
 import moonlightTheme from './assets/moonlight-ii.json' with { type: 'json' };
 
-/** @type {NextConfigPlugins} */
-const plugins = [];
+ 
+const plugins: ((config: NextConfig) => NextConfig)[] = [];
 
-/** @type {NextConfig} */
-const nextConfig = {
+ 
+const nextConfig : NextConfig = {
   output: 'export',
   cleanDistDir: true,
   reactStrictMode: true,

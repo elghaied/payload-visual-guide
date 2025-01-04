@@ -1,6 +1,3 @@
-
-
- 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import RootView from "@/components/views/RootView";
 import GlobalView from "@/components/views/GlobalView";

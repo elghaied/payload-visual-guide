@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import ZoneButton from "../ZoneButton";
+import DashboardLayout from "./DashboardLayout";
 
  
 
@@ -27,34 +27,8 @@ const RootView = ( ) => {
   ];
 
   return (
-    <div className="flex min-h-screen bg-background border-2 border-dashed border-gray-300 p-4 h-full">
-      <aside className="w-64 border-r bg-muted/40">
-        <nav className="flex flex-col gap-2 p-4">
-          <div className="font-medium">Collections</div>
-          {collections.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className="text-sm text-muted-foreground hover:text-foreground"
-            >
-              {item.title}
-            </Link>
-          ))}
-          <Separator className="my-2" />
-          <div className="font-medium">Globals</div>
-          {globals.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className="text-sm text-muted-foreground hover:text-foreground"
-            >
-              {item.title}
-            </Link>
-          ))}
-        </nav>
-      </aside>
-      <main className="flex-1 p-8">
-        <div className="mb-8">
+  <DashboardLayout>
+      <div className="mb-8">
           <h1 className="mb-4 text-2xl font-bold">
             Welcome to your dashboard!
           </h1>
@@ -116,8 +90,7 @@ const RootView = ( ) => {
             ))}
           </div>
         </div>
-      </main>
-    </div>
+  </DashboardLayout>
   );
 };
 

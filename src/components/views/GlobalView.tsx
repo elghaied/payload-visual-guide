@@ -1,10 +1,12 @@
  
 import { Button } from "@/components/ui/button"
+import DashboardLayout from "./DashboardLayout"
  
 
 const GlobalView = () => {
    return (
-    <div className="border-2 border-dashed border-gray-300 p-4 h-full">
+    <DashboardLayout>
+   
       <h2 className="text-2xl font-bold mb-4">Global View</h2>
       <div className="space-y-4">
         <Button 
@@ -23,7 +25,9 @@ const GlobalView = () => {
           Customizable Global Actions
         </Button>
       </div>
-    </div>
+
+    </DashboardLayout>
+
   )
 }
 
