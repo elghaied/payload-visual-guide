@@ -18,6 +18,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown, ChevronUp, SlidersHorizontal } from 'lucide-react'
+import ZoneButton from '../ZoneButton'
  
 
 const CollectionListView: FC  = ( ) => {
@@ -25,6 +26,7 @@ const CollectionListView: FC  = ( ) => {
     <DashboardLayout>
    
    <div className="min-h-screen bg-background text-foreground p-6">
+    <ZoneButton zone="before-list" />
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-semibold">Pages</h1>
         <Button variant="secondary">Create New</Button>
@@ -65,7 +67,7 @@ const CollectionListView: FC  = ( ) => {
           </DropdownMenu>
         </div>
       </div>
-
+    <ZoneButton zone="before-list-table" />
       <div className="border rounded-md">
         <Table>
           <TableHeader>

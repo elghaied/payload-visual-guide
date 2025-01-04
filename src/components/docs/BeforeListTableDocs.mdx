@@ -1,0 +1,20 @@
+### Before List Table
+
+An array of components to inject before the built-in List View's table
+
+```ts
+import type { SanitizedCollectionConfig } from 'payload'
+
+export const MyCollection: SanitizedCollectionConfig = {
+  // ...
+  admin: {
+    components: { 
+       beforeListTable: [
+        {
+          path: '@/components/CustomComponent',
+        },
+      ],
+    },
+  },
+}
+```

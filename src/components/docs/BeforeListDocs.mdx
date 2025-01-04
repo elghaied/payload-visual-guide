@@ -1,0 +1,20 @@
+### Before List
+
+An array of components to inject before the built-in List View
+
+```ts
+import type { SanitizedCollectionConfig } from 'payload'
+
+export const MyCollection: SanitizedCollectionConfig = {
+  // ...
+  admin: {
+    components: { 
+       beforeList: [
+        {
+          path: '@/components/CustomComponent',
+        },
+      ],
+    },
+  },
+}
+```
