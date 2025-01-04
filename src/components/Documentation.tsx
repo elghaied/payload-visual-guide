@@ -29,7 +29,7 @@ const Documentation = () => {
   }
 
   return (
-    <div className="prose  p-4 bg-gray-100 overflow-y-auto">
+    <div className="prose  p-4  ">
  
       {renderDocs()}
      

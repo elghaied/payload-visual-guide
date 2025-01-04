@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import DashboardLayout from "./DashboardLayout"
  
 
-const GlobalView = () => {
+const GlobalView : React.FC = () => {
    return (
     <DashboardLayout>
    

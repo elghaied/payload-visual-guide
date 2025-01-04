@@ -8,7 +8,7 @@ import DashboardLayout from "./DashboardLayout";
 
  
 
-const RootView = ( ) => {
+const RootView : React.FC = ( ) => {
   const collections = [
     { title: "Pages", href: "/pages" },
     { title: "Posts", href: "/posts" },

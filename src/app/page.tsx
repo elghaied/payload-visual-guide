@@ -20,7 +20,7 @@ export default function Home() {
         Payload CMS Customization Guide
       </h1>
       <Tabs defaultValue="root" className="flex-grow">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="root">Root Views</TabsTrigger>
           <TabsTrigger value="collection">Collection Views</TabsTrigger>
           <TabsTrigger value="global">Global Views</TabsTrigger>
@@ -52,7 +52,7 @@ export default function Home() {
             
           </ResizablePanel>
           <ResizableHandle withHandle  />
-          <ResizablePanel>
+          <ResizablePanel className="p-4 bg-gray-100">
           
             <Documentation  />
           </ResizablePanel>
